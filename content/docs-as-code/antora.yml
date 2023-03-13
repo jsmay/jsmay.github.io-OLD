@@ -1,0 +1,5 @@
+name: docs-as-code
+title: Documentation-as-Code
+version: ~
+# nav:
+#   - modules/ROOT/nav.adoc

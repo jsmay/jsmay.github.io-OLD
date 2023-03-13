@@ -1,0 +1,12 @@
+= Setting Up a New Repo for Antora
+
+== Initialize Git Repo and Add a Commit
+
+When using a local directory as a content source, Antora expects that directory to be a valid Git repo (see https://docs.antora.org/antora/latest/content-source-repositories/#git-and-content-sources[Antora Docs: Git and Content Sources]). If starting a project without content, create an empty repo. Antora will then recognize your content, whether its checked in or not.
+
+[source,bash]
+----
+git init . && git commit --allow-empty -m init
+----
+
+NOTE: There is a long-standing open issue addressing this behavior (https://gitlab.com/antora/antora/-/issues/298[Antora Issue #298]).

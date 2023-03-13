@@ -1,0 +1,30 @@
+site:
+  title: Jeffrey S. May
+  url: https://jsmay.github.io
+  start_page: ROOT::index.adoc
+content:
+  sources:
+    - url: .
+      start_paths:
+        - content/ROOT
+        - content/docs-as-code
+      branches: HEAD
+antora:
+  extensions:
+  - require: '@antora/lunr-extension'
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  #
+  # Automatically create build/site/.nojekyll to prevent GitHub Sites from
+  # ignorning files and directories starting with an underscore.
+  #
+  # See https://docs.antora.org/antora/latest/publish-to-github-pages/#jekyll-and-underscore-files
+  #
+  supplemental_files:
+  - path: ui.yml
+    contents: |
+      static_files:
+      - .nojekyll
+  - path: .nojekyll
